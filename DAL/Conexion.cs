@@ -18,7 +18,7 @@ namespace DAL
 		{
 			try
 			{
-				cad = "server={0};uid={1};pwd={2};database=comercialpanama;port={3}";
+				cad = "server={0};uid={1};pwd={2};database=comercialpanamabd;port={3}";
 				cad = string.Format(cad, "localhost", "root", "", "3306");
 				con = new MySqlConnection(cad);
 				con.Open();

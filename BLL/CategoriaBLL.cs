@@ -27,6 +27,9 @@ namespace BLL
 		public Categoria GetById_categoria(string Id_categoria)
 		{ return c.GetById_categoria(Id_categoria); }
 
+		public List<Categoria> GetByLikeId_categoria(string Id_categoria)
+		{ return c.GetByLikeId_categoria(Id_categoria); }
+
 		public void Save(Categoria ob)
 		{ c.Save(ob); }
 	}
