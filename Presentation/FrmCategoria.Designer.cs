@@ -58,6 +58,7 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(194, 450);
 			this.panel1.TabIndex = 1;
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
 			// panel2
 			// 
@@ -97,6 +98,7 @@
 			this.btnCategorias.TabIndex = 5;
 			this.btnCategorias.Text = "Categorias";
 			this.btnCategorias.UseVisualStyleBackColor = true;
+			this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
 			// 
 			// btnEmpleados
 			// 

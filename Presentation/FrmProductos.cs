@@ -10,21 +10,19 @@ using System.Windows.Forms;
 using Entities;
 using BLL; 
 
+
+
+
 namespace Presentation
 {
-    public partial class FrmLogin : Form
-    {
-        public FrmLogin()
-        {
-            InitializeComponent();
-        }
+	public partial class FrmProductos : Form
+	{
+		public FrmProductos()
+		{
+			InitializeComponent();
+		}
 
-        private void MaterialLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-		private void FrmLogin_Load(object sender, EventArgs e)
+		private void textBox3_TextChanged(object sender, EventArgs e)
 		{
 
 		}

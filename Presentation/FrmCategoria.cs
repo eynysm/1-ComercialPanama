@@ -172,5 +172,19 @@ namespace Presentation
 				MessageBox.Show(ex.Message);
 			}
 		}
+
+		private void btnCategorias_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+
+			FrmCategoria frm = new FrmCategoria();
+
+			frm.Show();
+		}
+
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }
