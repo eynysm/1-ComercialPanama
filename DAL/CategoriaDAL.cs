@@ -57,7 +57,7 @@ namespace DAL
 
 		public Categoria GetById_categoria(string Id_categoria)
 		{
-			sql = "select * from Categoria where codigo_categoria='{0}'";
+			sql = "select * from Categoria where Id_categoria='{0}'";
 			sql = string.Format(sql, Id_categoria);
 			DataTable dt = new DataTable();
 			dt = ExecuteQuery(sql);
@@ -69,6 +69,24 @@ namespace DAL
 				return ob;
 			}
 			return null;
+		}
+
+		public List<Categoria> GetByLikeId_categoria(string Id_categoria)
+		{
+			sql = "select * from Categoria where Id_categoria LIKE '%{0}%'";
+			sql = string.Format(sql, Id_categoria);
+			List<Categoria> ls = new List<Categoria>();
+			DataTable dt = new DataTable();
+			dt = ExecuteQuery(sql);
+			foreach (DataRow r in dt.Rows)
+			{
+				Categoria ob = new Categoria();
+				ob.Id_categoria = r[0].ToString();
+				ob.Nombre_categoria = r[1].ToString();
+				ls.Add(ob);
+
+			}
+			return ls;
 		}
 
 		public void Save(Categoria ob)

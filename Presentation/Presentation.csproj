@@ -83,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -101,6 +102,24 @@
   <ItemGroup>
     <Content Include="Images\icons8_Male_User_32px_1.png" />
     <Content Include="Images\icons8_Male_User_96px.png" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\price-tag.png" />
+    <None Include="Resources\team %282%29.png" />
+    <None Include="Resources\team %281%29.png" />
+    <None Include="Resources\placeholder %283%29.png" />
+    <None Include="Resources\placeholder %282%29.png" />
+    <None Include="Resources\placeholder %281%29.png" />
+    <None Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{4abedb45-9663-4d7f-9ec3-a365403f1ba2}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{cfe45290-66a6-4556-8d5b-78bf393a4b74}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
