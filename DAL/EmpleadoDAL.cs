@@ -18,8 +18,13 @@ namespace DAL
 
 		public void Add(Empleado ob)
 		{
-			sql = "insert into Empleado (id_empleado, nombre_empleado, apellido_empleado, direccion_empleado, telefono_empleado, genero_empleado, fecha_ingreso_empleado, foto_empleado, correo_empleado) values ('{0}','{1}',{2},{3},{4},'{5}','{6}','{7}','{8}')";
-			sql = string.Format(sql, ob.Id_empleado, ob.Nombre_empleado, ob.Apellido_empleado, ob.Direccion_empleado, ob.Telefono_empleado, ob.Genero_empleado, ob.Fecha_ingreso_empleado, ob.Foto_empleado, ob.Correo_empleado);
+			sql = "insert into Empleado (id_empleado, nombre_empleado, apellido_empleado, direccion_empleado, telefono_empleado, genero_empleado, fecha_ingreso_empleado, foto_empleado, correo_empleado) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')";
+			sql = string.Format(sql, ob.Id_empleado, 
+				
+				ob.Nombre_empleado, ob.Apellido_empleado, 
+				ob.Direccion_empleado, ob.Telefono_empleado, 
+				ob.Genero_empleado, ob.Fecha_ingreso_empleado, 
+				ob.Foto_empleado, ob.Correo_empleado);
 			ExecuteNonQuery(sql);
 		}
 
