@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,9 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CategoriaDAL.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="EmpleadoDAL.cs" />
+    <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SedeDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{cfe45290-66a6-4556-8d5b-78bf393a4b74}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

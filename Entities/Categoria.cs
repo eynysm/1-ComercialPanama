@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-	class Categoria
+	public class Categoria
 	{
-		public string codigo_categoria { get; set; }
-		public string nombre_categoria { get; set; }
+		public string Id_categoria { get; set; }
+		public string Nombre_categoria { get; set; }
 	}
 }
