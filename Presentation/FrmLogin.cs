@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-using Entities;
 
 namespace Presentation
 {
@@ -39,15 +31,31 @@ namespace Presentation
             //define local variables from the user inputs 
             string user = txtNombreUsuario.Text;
             string pass = txtPassword.Text;
-            //check if eligible to be logged in 
-            if (ebll.IsLoggedIn(user, pass))
+            if (!string.IsNullOrEmpty(user) && !string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("You are logged in successfully");
+
+                try
+                {
+                    //check if eligible to be logged in 
+                    if (ebll.IsLoggedIn(user, pass))
+                    {
+                        MessageBox.Show("You are logged in successfully");
+                    }
+                    else
+                    {
+                        //show default login error message 
+                        MessageBox.Show("Login Error!");
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show($"Error {ex.Message}");
+                }
             }
             else
             {
-                //show default login error message 
-                MessageBox.Show("Login Error!");
+                MessageBox.Show("Hay campos vacios verifica");
             }
         }
 
