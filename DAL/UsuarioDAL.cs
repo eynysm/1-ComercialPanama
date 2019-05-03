@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities;
+using MySql.Data.MySqlClient;
 
 namespace DAL
 {
@@ -19,22 +20,37 @@ namespace DAL
 
         public void Add(Usuario ob)
         {
-            sql = "insert into Usuario (Id_usuario, Nombre_usuario, direccion_Usuario, telefono_Usuario, id_empleado) values ('{0}','{1}','{2}','{3}','{4}')";
-            sql = string.Format(sql, ob.Id_usuario, ob.Nombre_usuario, ob.Password, ob.Id_empleado);
+            sql = "INSERT INTO usuario (id_usuario,password,nombre_usuario,correo_usuario,id_empleado)VALUES('{0}','{1}','{2}','{3}','{4}')";
+            sql = string.Format(sql, ob.Id_usuario, ob.Password, ob.Nombre_usuario, ob.Correo_usuario, ob.Id_empleado);
             ExecuteNonQuery(sql);
         }
 
+        public Usuario GetById_Usuario(string id_Usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool login(string user, string pass)
+        {
+            sql = "Select* from usuario where nombre_usuario = {0} and password = {1}";
+            sql = string.Format(sql, user, pass);
+            ExecuteNonQuery(sql);
+            return Loguear(sql);
+        }
+
+
+
         public void Delete(string Id_usuario)
         {
-            sql = "delete from Usuario where Id_usuario ='{0}')";
+            sql = "delete from Usuario where id_usuario ='{0}')";
             sql = string.Format(sql, Id_usuario);
             ExecuteNonQuery(sql);
         }
 
-        public void Update(Usuario ob)
+        public void Update(Usuario ob, string id)
         {
-            sql = "insert into Usuario (Nombre_usuario, direccion_Usuario, telefono_Usuario, id_empleado) values ('{1}','{2}','{3}','{4}')";
-            sql = string.Format(sql, ob.Id_usuario, ob.Nombre_usuario, ob.Password, ob.Id_empleado);
+            sql = "Update  Usuario set SET id_usuario ={0}, password = {1}, nombre_usuario = {2}, correo_usuario = {3}, id_empleado = {4}  WHERE id_usuario = {5}";
+            sql = string.Format(sql, ob.Id_usuario, ob.Nombre_usuario, ob.Password, ob.Id_empleado, id);
             ExecuteNonQuery(sql);
         }
 
@@ -79,7 +95,7 @@ namespace DAL
         public void Save(Usuario ob)
         {
             if (GetById_usuario(ob.Id_usuario) != null)
-                Update(ob);
+                Update(ob, ob.Id_usuario);
             else
                 Add(ob);
         }
