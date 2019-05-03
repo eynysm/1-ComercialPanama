@@ -8,25 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
-using BLL; 
+using BLL;
+using System.IO;
 
 namespace Presentation
 {
 	public partial class FrmEmpleados : Form
 	{
 		private EmpleadoBLL ebll;
+		public string RutaFoto { get; set; }
+		
 
-		private void FillSede()
+		private void FillEmpleado()
 		{
 			dgEmpleados.DataSource = ebll.GetAll();
 			dgEmpleados.Refresh(); ;
+
+
 		}
 
 		private void FillGrid()
 		{
 			try
 			{
-				dgEmpleados.DataSource = ebll.GetAll();
+				int i = 0;
+				foreach (var item in ebll.GetAll())
+				{ 
+					dgEmpleados.Rows.Insert(i, item.Id_empleado, item.Nombre_empleado, item.Apellido_empleado, item.Direccion_empleado, item.Telefono_empleado,item.Genero_empleado, ByteToImage(item.Foto_empleado), item.Correo_empleado);
+					i++;
+				}
 				dgEmpleados.Refresh();
 			}
 			catch (Exception ex)
@@ -47,6 +57,32 @@ namespace Presentation
 			cbxGenero.Text = "";
 		}
 
+		public void LoadPhoto()
+		{
+			try
+			{
+				OpenFileDialog openFileDialog1 = new OpenFileDialog
+				{
+					Title = "Seleccione la Imagen", 
+					Filter = "Imagenes|*.jpg;*.png*.jpeg;*.gif"
+				};
+
+				if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
+				{
+					RutaFoto = openFileDialog1.FileName;
+					pbFoto.Image = Image.FromFile(RutaFoto);
+				}
+
+
+
+			}
+			catch (Exception ex)
+			{
+
+				MessageBox.Show(ex.Message);
+			}
+		}
+
 		private void FillData(string x)
 		{
 			try
@@ -59,8 +95,8 @@ namespace Presentation
 					txtApellido.Text = ob.Apellido_empleado;
 					txtDireccion.Text = ob.Direccion_empleado;
 					txtTelefono.Text = ob.Telefono_empleado;
-					cbxGenero.SelectedValue = ob.Genero_empleado;
-					pbFoto.Text = ob.Foto_empleado; 
+					cbxGenero.SelectedItem = ob.Genero_empleado;
+					pbFoto.Image =ByteToImage( ob.Foto_empleado);
 					dtpFechaIngreso.Text = ob.Fecha_ingreso_empleado.ToString();
 					txtCorreo.Text = ob.Correo_empleado;
 				}
@@ -71,32 +107,52 @@ namespace Presentation
 				MessageBox.Show(ex.Message);
 			}
 		}
+
+		//Convierte byte[] en image
+		private Image ByteToImage(byte[] blob)
+		{
+			try
+			{
+				MemoryStream memoryStream = new MemoryStream();
+				byte[] pData = blob;
+				memoryStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+				Bitmap bitmap = new Bitmap(memoryStream, false);
+				return bitmap;
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			
+		}
+
 		private void Save()
 		{
 			try
 			{
 				Empleado ob = new Empleado();
+
 				if (txtId.Text.Trim() != "")
-
-				txtId.Text = ob.Id_empleado;
-				txtNombre.Text = ob.Nombre_empleado;
-				txtApellido.Text = ob.Apellido_empleado;
-				txtDireccion.Text = ob.Direccion_empleado;
-				txtTelefono.Text = ob.Telefono_empleado;
-				cbxGenero.SelectedValue = ob.Genero_empleado;
-				pbFoto.Text = ob.Foto_empleado;
-				dtpFechaIngreso.Text = ob.Fecha_ingreso_empleado.ToString();
-				txtCorreo.Text = ob.Correo_empleado;
-
-				ebll.Save(ob);
-				FillGrid();
-				ClearText();
-				MessageBox.Show("Los datos han sido almacenados correctamente");
-
+				{
+					ob.Id_empleado = txtId.Text;
+					ob.Nombre_empleado = txtNombre.Text;
+					ob.Apellido_empleado = txtApellido.Text;
+					ob.Direccion_empleado = txtDireccion.Text;
+					ob.Telefono_empleado = txtTelefono.Text;
+					ob.Genero_empleado = cbxGenero.SelectedItem.ToString();
+					ob.Foto_empleado = File.ReadAllBytes(RutaFoto);
+					ob.Fecha_ingreso_empleado = Convert.ToDateTime(dtpFechaIngreso.Text);
+					ob.Fecha_ingreso_empleado = dtpFechaIngreso.Value.Date;
+					ob.Correo_empleado = txtCorreo.Text;
+					ebll.Save(ob);
+					FillGrid();
+					ClearText();
+					MessageBox.Show("Los datos han sido almacenados correctamente");
+				}
 			}
 			catch (Exception ex)
 			{
-
 				MessageBox.Show(ex.Message);
 			}
 		}
@@ -121,6 +177,23 @@ namespace Presentation
 		}
 
 
+
+		private void btnAgregar_Click(object sender, EventArgs e)
+		{
+			Save();
+		}
+
+		private void btnActualizar_Click(object sender, EventArgs e)
+		{
+			ClearText();
+		}
+
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			Delete();
+		}
+
+
 		public FrmEmpleados()
 		{
 			InitializeComponent();
@@ -138,26 +211,6 @@ namespace Presentation
 
 				MessageBox.Show(ex.Message);
 			}
-		}
-
-		private void dgSede_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
-		private void btnAgregar_Click(object sender, EventArgs e)
-		{
-			Save();
-		}
-
-		private void btnActualizar_Click(object sender, EventArgs e)
-		{
-			ClearText(); 
-		}
-
-		private void btnEliminar_Click(object sender, EventArgs e)
-		{
-			Delete(); 
 		}
 
 		private void dgEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -179,6 +232,16 @@ namespace Presentation
 		private void dtpFechaIngreso_ValueChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnAgregarFoto_Click(object sender, EventArgs e)
+		{
+			LoadPhoto(); 
 		}
 	}
 }
