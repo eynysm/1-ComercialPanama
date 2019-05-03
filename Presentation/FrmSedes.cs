@@ -7,29 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entities;
-using BLL; 
-
-
-
 
 namespace Presentation
 {
-	public partial class FrmProductos : Form
+	public partial class FrmSedes : Form
 	{
-		public FrmProductos()
+		public FrmSedes()
 		{
 			InitializeComponent();
-		}
-
-		private void textBox3_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void FrmProductos_Load(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

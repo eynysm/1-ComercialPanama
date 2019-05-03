@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
-using BLL; 
+using BLL;
 
 namespace Presentation
 {
 	public partial class FrmCategoria : Form
 	{
-		
+
 		private CategoriaBLL c;
 
 
@@ -73,17 +73,17 @@ namespace Presentation
 			{
 				Categoria ob = new Categoria();
 				if (txtId.Text.Trim() != "")
+				{
 					ob.Id_categoria = txtId.Text;
-				ob.Nombre_categoria = txtNombre.Text;
-
-				c.Save(ob);
-				FillGrid();
-				ClearText();
-				MessageBox.Show("Los datos han sido almacenados correctamente");
+					ob.Nombre_categoria = txtNombre.Text;
+					c.Save(ob);
+					FillGrid();
+					ClearText();
+					MessageBox.Show("Los datos han sido almacenados correctamente");
+				}
 			}
 			catch (Exception ex)
 			{
-
 				MessageBox.Show(ex.Message);
 			}
 		}
@@ -114,12 +114,12 @@ namespace Presentation
 
 		private void btnAgregar_Click(object sender, EventArgs e)
 		{
-			Save(); 
+			Save();
 		}
 
 		private void btnActualizar_Click(object sender, EventArgs e)
 		{
-			ClearText(); 
+			ClearText();
 		}
 
 		private void btnEliminar_Click(object sender, EventArgs e)
@@ -165,7 +165,7 @@ namespace Presentation
 				{
 					FillGridLike(txtId.Text);
 				}
-				
+
 			}
 			catch (Exception ex)
 			{
@@ -183,6 +183,11 @@ namespace Presentation
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void panel2_Paint(object sender, PaintEventArgs e)
 		{
 
 		}

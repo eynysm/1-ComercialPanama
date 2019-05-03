@@ -30,10 +30,6 @@
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.btnProductos = new System.Windows.Forms.Button();
-			this.btnCategorias = new System.Windows.Forms.Button();
-			this.btnEmpleados = new System.Windows.Forms.Button();
-			this.btnSede = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.btnActualizar = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
@@ -42,6 +38,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.dgSede = new System.Windows.Forms.DataGridView();
+			this.btnProductos = new System.Windows.Forms.Button();
+			this.btnCategorias = new System.Windows.Forms.Button();
+			this.btnEmpleados = new System.Windows.Forms.Button();
+			this.btnSede = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgSede)).BeginInit();
 			this.SuspendLayout();
@@ -68,67 +68,7 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(606, 43);
 			this.panel2.TabIndex = 2;
-			// 
-			// btnProductos
-			// 
-			this.btnProductos.FlatAppearance.BorderSize = 0;
-			this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnProductos.ForeColor = System.Drawing.Color.White;
-			this.btnProductos.Image = global::Presentation.Properties.Resources.box;
-			this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnProductos.Location = new System.Drawing.Point(12, 314);
-			this.btnProductos.Name = "btnProductos";
-			this.btnProductos.Size = new System.Drawing.Size(194, 44);
-			this.btnProductos.TabIndex = 6;
-			this.btnProductos.Text = "Productos";
-			this.btnProductos.UseVisualStyleBackColor = true;
-			// 
-			// btnCategorias
-			// 
-			this.btnCategorias.FlatAppearance.BorderSize = 0;
-			this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCategorias.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCategorias.ForeColor = System.Drawing.Color.White;
-			this.btnCategorias.Image = global::Presentation.Properties.Resources.price_tag;
-			this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnCategorias.Location = new System.Drawing.Point(12, 250);
-			this.btnCategorias.Name = "btnCategorias";
-			this.btnCategorias.Size = new System.Drawing.Size(194, 44);
-			this.btnCategorias.TabIndex = 5;
-			this.btnCategorias.Text = "Categorias";
-			this.btnCategorias.UseVisualStyleBackColor = true;
-			this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-			// 
-			// btnEmpleados
-			// 
-			this.btnEmpleados.FlatAppearance.BorderSize = 0;
-			this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEmpleados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-			this.btnEmpleados.Image = global::Presentation.Properties.Resources.team__1_;
-			this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnEmpleados.Location = new System.Drawing.Point(12, 184);
-			this.btnEmpleados.Name = "btnEmpleados";
-			this.btnEmpleados.Size = new System.Drawing.Size(194, 44);
-			this.btnEmpleados.TabIndex = 4;
-			this.btnEmpleados.Text = "Empleados";
-			this.btnEmpleados.UseVisualStyleBackColor = true;
-			// 
-			// btnSede
-			// 
-			this.btnSede.FlatAppearance.BorderSize = 0;
-			this.btnSede.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSede.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSede.ForeColor = System.Drawing.Color.White;
-			this.btnSede.Image = global::Presentation.Properties.Resources.placeholder__3_;
-			this.btnSede.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSede.Location = new System.Drawing.Point(12, 118);
-			this.btnSede.Name = "btnSede";
-			this.btnSede.Size = new System.Drawing.Size(194, 44);
-			this.btnSede.TabIndex = 3;
-			this.btnSede.Text = "Sedes";
-			this.btnSede.UseVisualStyleBackColor = true;
+			this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
 			// 
 			// btnEliminar
 			// 
@@ -207,6 +147,67 @@
 			this.dgSede.TabIndex = 12;
 			this.dgSede.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSede_CellContentDoubleClick);
 			this.dgSede.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSede_CellDoubleClick);
+			// 
+			// btnProductos
+			// 
+			this.btnProductos.FlatAppearance.BorderSize = 0;
+			this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnProductos.ForeColor = System.Drawing.Color.White;
+			this.btnProductos.Image = global::Presentation.Properties.Resources.box;
+			this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnProductos.Location = new System.Drawing.Point(12, 314);
+			this.btnProductos.Name = "btnProductos";
+			this.btnProductos.Size = new System.Drawing.Size(194, 44);
+			this.btnProductos.TabIndex = 6;
+			this.btnProductos.Text = "Productos";
+			this.btnProductos.UseVisualStyleBackColor = true;
+			// 
+			// btnCategorias
+			// 
+			this.btnCategorias.FlatAppearance.BorderSize = 0;
+			this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCategorias.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCategorias.ForeColor = System.Drawing.Color.White;
+			this.btnCategorias.Image = global::Presentation.Properties.Resources.price_tag;
+			this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnCategorias.Location = new System.Drawing.Point(12, 250);
+			this.btnCategorias.Name = "btnCategorias";
+			this.btnCategorias.Size = new System.Drawing.Size(194, 44);
+			this.btnCategorias.TabIndex = 5;
+			this.btnCategorias.Text = "Categorias";
+			this.btnCategorias.UseVisualStyleBackColor = true;
+			this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+			// 
+			// btnEmpleados
+			// 
+			this.btnEmpleados.FlatAppearance.BorderSize = 0;
+			this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEmpleados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEmpleados.ForeColor = System.Drawing.Color.White;
+			this.btnEmpleados.Image = global::Presentation.Properties.Resources.team__1_;
+			this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEmpleados.Location = new System.Drawing.Point(12, 184);
+			this.btnEmpleados.Name = "btnEmpleados";
+			this.btnEmpleados.Size = new System.Drawing.Size(194, 44);
+			this.btnEmpleados.TabIndex = 4;
+			this.btnEmpleados.Text = "Empleados";
+			this.btnEmpleados.UseVisualStyleBackColor = true;
+			// 
+			// btnSede
+			// 
+			this.btnSede.FlatAppearance.BorderSize = 0;
+			this.btnSede.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSede.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSede.ForeColor = System.Drawing.Color.White;
+			this.btnSede.Image = global::Presentation.Properties.Resources.placeholder__3_;
+			this.btnSede.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSede.Location = new System.Drawing.Point(12, 118);
+			this.btnSede.Name = "btnSede";
+			this.btnSede.Size = new System.Drawing.Size(194, 44);
+			this.btnSede.TabIndex = 3;
+			this.btnSede.Text = "Sedes";
+			this.btnSede.UseVisualStyleBackColor = true;
 			// 
 			// FrmCategoria
 			// 
