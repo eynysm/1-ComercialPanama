@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entities;
-using BLL; 
 
 namespace Presentation
 {
@@ -19,14 +17,9 @@ namespace Presentation
             InitializeComponent();
         }
 
-        private void MaterialLabel1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
 
         }
-
-		private void FrmLogin_Load(object sender, EventArgs e)
-		{
-
-		}
-	}
+    }
 }
