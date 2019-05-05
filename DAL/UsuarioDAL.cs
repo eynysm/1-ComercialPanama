@@ -32,7 +32,7 @@ namespace DAL
 
         public bool login(string user, string pass)
         {
-            sql = "Select* from usuario where nombre_usuario = {0} and password = {1}";
+            sql = "Select* from usuario where nombre_usuario = '{0}' and password = '{1}'";
             sql = string.Format(sql, user, pass);
             ExecuteNonQuery(sql);
             return Loguear(sql);
@@ -49,7 +49,7 @@ namespace DAL
 
         public void Update(Usuario ob, string id)
         {
-            sql = "Update  Usuario set SET id_usuario ={0}, password = {1}, nombre_usuario = {2}, correo_usuario = {3}, id_empleado = {4}  WHERE id_usuario = {5}";
+            sql = "Update  Usuario set SET id_usuario ='{0}', password = '{1}', nombre_usuario = '{2}', correo_usuario = '{3}', id_empleado = '{4}'  WHERE id_usuario = '{5}'";
             sql = string.Format(sql, ob.Id_usuario, ob.Nombre_usuario, ob.Password, ob.Id_empleado, id);
             ExecuteNonQuery(sql);
         }
@@ -62,12 +62,12 @@ namespace DAL
             dt = ExecuteQuery(sql);
             foreach (DataRow r in dt.Rows)
             {
-                Usuario ob = new Usuario();
-                ob.Id_usuario = r[0].ToString();
-                ob.Nombre_usuario = r[1].ToString();
-                ob.Correo_usuario = r[2].ToString();
-                ob.Id_empleado = r[3].ToString();
-                ls.Add(ob);
+				Usuario ob = new Usuario();
+				ob.Id_usuario = r[0].ToString();
+				ob.Nombre_usuario = r[2].ToString();
+				ob.Correo_usuario = r[3].ToString();
+				ob.Id_empleado = r[4].ToString();
+				ls.Add(ob);
 
             }
             return ls;
@@ -81,11 +81,12 @@ namespace DAL
             dt = ExecuteQuery(sql);
             foreach (DataRow r in dt.Rows)
             {
-                Usuario ob = new Usuario();
+				
+				Usuario ob = new Usuario();
                 ob.Id_usuario = r[0].ToString();
-                ob.Nombre_usuario = r[1].ToString();
-                ob.Correo_usuario = r[2].ToString();
-                ob.Id_empleado = r[3].ToString();
+                ob.Nombre_usuario = r[2].ToString();
+                ob.Correo_usuario = r[3].ToString();
+                ob.Id_empleado = r[4].ToString();
 
                 return ob;
             }

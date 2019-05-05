@@ -9,13 +9,13 @@ namespace Presentation
 {
     public partial class FrmUsuario : Form
     {
-        private UsuarioBLL ebll;
+        private UsuarioBLL ubll;
         public string RutaFoto { get; set; }
 
 
         private void FillUsuario()
         {
-            dgUsuario.DataSource = ebll.GetAll();
+            dgUsuario.DataSource = ubll.GetAll();
             dgUsuario.Refresh(); ;
 
 
@@ -25,7 +25,7 @@ namespace Presentation
         {
             try
             {
-                dgUsuario.DataSource = ebll.GetAll();
+                dgUsuario.DataSource = ubll.GetAll();
                 dgUsuario.Refresh();
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace Presentation
         {
             try
             {
-                var ob = ebll.GetById_Usuario(x);
+                var ob = ubll.GetById_Usuario(x);
                 if (ob != null)
                 {
                     txtId.Text = ob.Id_usuario;
@@ -109,7 +109,7 @@ namespace Presentation
 
 
 
-                    ebll.Save(ob);
+                    ubll.Save(ob);
                     FillGrid();
                     ClearText();
                     MessageBox.Show("Los datos han sido almacenados correctamente");
@@ -127,7 +127,7 @@ namespace Presentation
             {
                 if (txtId.Text.Trim() != "")
                 {
-                    ebll.Delete(txtId.Text);
+                    ubll.Delete(txtId.Text);
                     FillGrid();
                     ClearText();
                     MessageBox.Show("El registro ha sido eliminado correctamente");
@@ -167,7 +167,7 @@ namespace Presentation
         {
             try
             {
-                ebll = new UsuarioBLL();
+                ubll = new UsuarioBLL();
                 FillGrid();
             }
             catch (Exception ex)
@@ -203,6 +203,18 @@ namespace Presentation
 
         }
 
+		private void FrmUsuario_Load(object sender, EventArgs e)
+		{
+			try
+			{
+				ubll = new UsuarioBLL();
+				FillGrid();
+			}
+			catch (Exception ex)
+			{
 
-    }
+				MessageBox.Show(ex.Message);
+			}
+		}
+	}
 }

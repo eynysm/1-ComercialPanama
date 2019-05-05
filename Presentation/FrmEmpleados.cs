@@ -91,7 +91,7 @@ namespace Presentation
 					txtDireccion.Text = ob.Direccion_empleado;
 					txtTelefono.Text = ob.Telefono_empleado;
 					cbxGenero.SelectedItem = ob.Genero_empleado;
-					pbFoto.Image =ByteToImage( ob.Foto_empleado);
+					pbFoto = ob.Foto_empleado;
 					dtpFechaIngreso.Text = ob.Fecha_ingreso_empleado.ToString();
 					txtCorreo.Text = ob.Correo_empleado;
 				}
@@ -101,25 +101,6 @@ namespace Presentation
 
 				MessageBox.Show(ex.Message);
 			}
-		}
-
-		//Convierte byte[] en image
-		private Image ByteToImage(byte[] blob)
-		{
-			try
-			{
-				MemoryStream memoryStream = new MemoryStream();
-				byte[] pData = blob;
-				memoryStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-				Bitmap bitmap = new Bitmap(memoryStream, false);
-				return bitmap;
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-			
 		}
 
 		private void Save()
@@ -136,7 +117,7 @@ namespace Presentation
 					ob.Direccion_empleado = txtDireccion.Text;
 					ob.Telefono_empleado = txtTelefono.Text;
 					ob.Genero_empleado = cbxGenero.SelectedItem.ToString();
-					ob.Foto_empleado = File.ReadAllBytes(RutaFoto);
+					ob.Foto_empleado = ;
 					ob.Fecha_ingreso_empleado = Convert.ToDateTime(dtpFechaIngreso.Text);
 					ob.Fecha_ingreso_empleado = dtpFechaIngreso.Value.Date;
 					ob.Correo_empleado = txtCorreo.Text;

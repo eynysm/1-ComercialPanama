@@ -65,37 +65,13 @@ namespace DAL
                 ob.Telefono_empleado = r[4].ToString();
                 ob.Genero_empleado = r[5].ToString();
                 ob.Fecha_ingreso_empleado = Convert.ToDateTime(r[6]);
-                ob.Foto_empleado = (byte[])r[7];
-                ob.Correo_empleado = r[8].ToString();
+                ob.Foto_empleado = r[7].ToString();
+				ob.Correo_empleado = r[8].ToString();
                 ls.Add(ob);
 
             }
             return ls;
-        }
-
-        //Convierte un array de objetos en byte para que la base de la pueda mostrar en la compu
-        byte[] ObjectByteArray(object obj)
-        {
-
-            try
-            {
-                if (obj == null)
-                    return null;
-
-                BinaryFormatter bf = new BinaryFormatter();
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    bf.Serialize(ms, obj);
-                    return ms.ToArray();
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
+        }      
 
         public Empleado GetById_empleado(string Id_empleado)
         {
@@ -113,8 +89,8 @@ namespace DAL
                 ob.Telefono_empleado = r[4].ToString();
                 ob.Genero_empleado = r[5].ToString();
                 ob.Fecha_ingreso_empleado = Convert.ToDateTime(r[6]);
-                ob.Foto_empleado = ObjectByteArray(r[7]);
-                ob.Correo_empleado = r[8].ToString();
+                ob.Foto_empleado = r[7].ToString();
+				ob.Correo_empleado = r[8].ToString();
                 return ob;
             }
             return null;

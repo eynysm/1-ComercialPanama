@@ -16,7 +16,23 @@ namespace Presentation
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FrmLogin());
+			FrmEmpleados frmLogin = new FrmEmpleados();
+			frmLogin.FormClosed += FrmLogin_closed;
+			frmLogin.Show();
+			Application.Run();
+		}
+		//this method is remove from page satck overflow
+		private static void FrmLogin_closed(object sender, FormClosedEventArgs e)
+		{
+			((Form)sender).FormClosed -= FrmLogin_closed;
+			if (Application.OpenForms.Count == 0)
+			{
+				Application.ExitThread();
+			}
+			else
+			{
+				Application.OpenForms[0].FormClosed += FrmLogin_closed;
+			}
 		}
 	}
 }
