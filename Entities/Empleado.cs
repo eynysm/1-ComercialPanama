@@ -15,7 +15,7 @@ namespace Entities
 		public string Telefono_empleado { get; set; }
 		public string Genero_empleado { get; set; }
 		public DateTime Fecha_ingreso_empleado { get; set; }
-		public byte[] Foto_empleado { get; set; }
+		public string Foto_empleado { get; set; }
 		public string Correo_empleado { get; set; }
 	}
 }

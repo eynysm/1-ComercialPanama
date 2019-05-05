@@ -45,7 +45,7 @@ namespace DAL
         public void Update(Empleado ob)
         {
             sql = "update empleado set nombre_empleado='{1}', apellido_empleado='{2}',  direccion_empleado='{3}', telefono_empleado='{4}', genero_empleado='{5}', fecha_ingreso_empleado='{6}', foto_empleado='{7}', correo_empleado='{8}' where id_empleado = '{0}'";
-            sql = string.Format(sql, ob.Id_empleado, ob.Nombre_empleado, ob.Apellido_empleado, ob.Direccion_empleado, ob.Telefono_empleado, ob.Genero_empleado, ob.Fecha_ingreso_empleado, ob.Foto_empleado, ob.Correo_empleado);
+            sql = string.Format(sql, ob.Id_empleado, ob.Nombre_empleado, ob.Apellido_empleado, ob.Direccion_empleado, ob.Telefono_empleado, ob.Genero_empleado, ob.Fecha_ingreso_empleado.ToString("yyyy-MM-dd hh:mm:ss"), ob.Foto_empleado, ob.Correo_empleado);
             ExecuteNonQuery(sql);
         }
 
