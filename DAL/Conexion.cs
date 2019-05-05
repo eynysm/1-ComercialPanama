@@ -55,7 +55,41 @@ namespace DAL
 		}
 
 
-		public DataTable ExecuteQuery(string sql)
+        public bool Loguear(string sql)
+        {
+            try
+            {
+                using (con = new MySqlConnection(cad))
+                {
+                    con.Open();
+                    cmd = con.CreateCommand();
+
+                    cmd.CommandText = sql;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    MySqlDataReader login = cmd.ExecuteReader();
+                    if (login.Read())
+                    {
+                        cmd.Dispose();
+                        return true;
+                    }
+                    else
+                    {
+                        cmd.Dispose();
+                        return false;
+                    }
+                   
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+           
+        }
+    
+        public DataTable ExecuteQuery(string sql)
 		{
 			try
 			{
