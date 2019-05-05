@@ -31,12 +31,7 @@ namespace Presentation
 		{
 			try
 			{
-				int i = 0;
-				foreach (var item in ebll.GetAll())
-				{ 
-					dgEmpleados.Rows.Insert(i, item.Id_empleado, item.Nombre_empleado, item.Apellido_empleado, item.Direccion_empleado, item.Telefono_empleado,item.Genero_empleado, ByteToImage(item.Foto_empleado), item.Correo_empleado);
-					i++;
-				}
+				dgEmpleados.DataSource = ebll.GetAll(); 
 				dgEmpleados.Refresh();
 			}
 			catch (Exception ex)

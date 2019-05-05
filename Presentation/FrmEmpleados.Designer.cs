@@ -56,15 +56,6 @@
 			this.cbxGenero = new System.Windows.Forms.ComboBox();
 			this.pbFoto = new System.Windows.Forms.PictureBox();
 			this.btnAgregarFoto = new System.Windows.Forms.Button();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgEmpleados)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
@@ -194,16 +185,6 @@
 			// dgEmpleados
 			// 
 			this.dgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
 			this.dgEmpleados.Location = new System.Drawing.Point(263, 341);
 			this.dgEmpleados.Name = "dgEmpleados";
 			this.dgEmpleados.Size = new System.Drawing.Size(511, 151);
@@ -366,51 +347,6 @@
 			this.btnAgregarFoto.UseVisualStyleBackColor = true;
 			this.btnAgregarFoto.Click += new System.EventHandler(this.btnAgregarFoto_Click);
 			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Id";
-			this.Column1.Name = "Column1";
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "Nombre";
-			this.Column2.Name = "Column2";
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "Apellido";
-			this.Column3.Name = "Column3";
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "Direcion";
-			this.Column4.Name = "Column4";
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "Telefono";
-			this.Column5.Name = "Column5";
-			// 
-			// Column6
-			// 
-			this.Column6.HeaderText = "Genero";
-			this.Column6.Name = "Column6";
-			// 
-			// Column7
-			// 
-			this.Column7.HeaderText = "Imagen";
-			this.Column7.Name = "Column7";
-			// 
-			// Column8
-			// 
-			this.Column8.HeaderText = "Fecha Ingreso";
-			this.Column8.Name = "Column8";
-			// 
-			// Column9
-			// 
-			this.Column9.HeaderText = "Correo";
-			this.Column9.Name = "Column9";
-			// 
 			// FrmEmpleados
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,14 +417,5 @@
 		private System.Windows.Forms.ComboBox cbxGenero;
 		private System.Windows.Forms.PictureBox pbFoto;
 		private System.Windows.Forms.Button btnAgregarFoto;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewImageColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 	}
 }
