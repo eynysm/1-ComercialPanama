@@ -23,7 +23,30 @@ namespace Presentation
 		}
 
 		private ProductoBLL pbll;
+		private EmpleadoBLL ebll;
+		private SedeBLL sbll;
+		private CategoriaBLL cbll; 
 
+
+
+		private void Fillcombos()
+		{
+			cbxResponsable.DataSource = ebll.GetAll();
+			cbxResponsable.DisplayMember = "Nombre_empleado";
+			cbxResponsable.ValueMember = "Id_empleado";
+			cbxResponsable.Refresh();
+
+			cbxSede.DataSource = sbll.GetAll();
+			cbxSede.DisplayMember = "Nombre_sede";
+			cbxSede.ValueMember = "Nit_sede";
+			cbxSede.Refresh();
+
+			cbxCategoria.DataSource = cbll.GetAll();
+			cbxCategoria.DisplayMember = "Nombre_categoria";
+			cbxCategoria.ValueMember = "Id_categoria";
+			cbxCategoria.Refresh();
+
+		}
 
 		private void FillGrid()
 		{
@@ -88,9 +111,9 @@ namespace Presentation
 					ob.Precio_venta_producto = Convert.ToDecimal(txtPrecioVenta.Text);
 					ob.Precio_compra_producto = Convert.ToDecimal(txtPrecioCompra.Text);
 					ob.Fecha_ingreso_producto = Convert.ToDateTime(dtpFechaIngreso.Text);
-					ob.Id_empleado = cbxResponsable.Text;
-					ob.Nit_sede = cbxSede.Text;
-					ob.Id_categoria = cbxCategoria.Text;
+					ob.Id_empleado = cbxResponsable.SelectedValue.ToString(); 
+					ob.Nit_sede = cbxSede.SelectedValue.ToString(); 
+					ob.Id_categoria = cbxCategoria.SelectedValue.ToString(); 
 					pbll.Save(ob);
 					FillGrid();
 					ClearText();
@@ -124,22 +147,6 @@ namespace Presentation
 			}
 		}
 
-
-		private void btnEliminar_Click(object sender, EventArgs e)
-		{
-			Delete();
-		}
-
-		private void btnActualizar_Click(object sender, EventArgs e)
-		{
-			ClearText(); 
-		}
-
-		private void btnAgregar_Click(object sender, EventArgs e)
-		{
-			Save(); 
-		}
-
 		private void txtId_TextChanged(object sender, EventArgs e)
 		{
 		
@@ -150,7 +157,11 @@ namespace Presentation
 			try
 			{
 				pbll = new ProductoBLL();
-				FillGrid();
+				ebll = new EmpleadoBLL();
+				sbll = new SedeBLL ();
+				cbll = new CategoriaBLL ();
+		FillGrid();
+				Fillcombos(); 
 			}
 			catch (Exception ex)
 			{
@@ -175,6 +186,19 @@ namespace Presentation
 			}
 		}
 
+		private void btnAgregar_Click_1(object sender, EventArgs e)
+		{
+			Save();
+		}
 
+		private void btnActualizar_Click(object sender, EventArgs e)
+		{
+			ClearText(); 
+		}
+
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			Delete(); 
+		}
 	}
 }

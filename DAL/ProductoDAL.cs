@@ -18,9 +18,9 @@ namespace DAL
 
 		public void Add(Producto ob)
 		{
-			sql = "insert into Producto (id_producto, nombre_producto, precio_venta_producto, precio_compra_producto, fecha_ingreso_producto, id_empleado, nit_sede, id_categoria)" +
-				"values ('{0}','{1}',{2},{3},{4},'{5}','{6}','{7}')";
-			sql = string.Format(sql, ob.Id_producto, ob.Nombre_producto, ob.Precio_venta_producto, ob.Precio_compra_producto, ob.Fecha_ingreso_producto, ob.Id_empleado, ob.Nit_sede, ob.Id_categoria);
+			sql = "insert into Producto (id_producto, nombre_producto, precio_venta_producto, precio_compra_producto, fecha_ingreso_producto, responsable_producto, nit_sede, id_categoria)" +
+				"values ('{0}','{1}',{2},{3},'{4}','{5}','{6}','{7}')";
+			sql = string.Format(sql, ob.Id_producto, ob.Nombre_producto, ob.Precio_venta_producto, ob.Precio_compra_producto, ob.Fecha_ingreso_producto.ToString("yyyy-MM-dd hh:mm:ss"), ob.Id_empleado, ob.Nit_sede, ob.Id_categoria);
 			ExecuteNonQuery(sql);
 		}
 
@@ -34,8 +34,8 @@ namespace DAL
 		public void Update(Producto ob)
 		{
 			sql = "update Producto set nombre_producto='{1}', precio_venta_producto={2}, precio_compra_producto={3},";
-			sql += "fecha_ingreso_producto='{4}', id_empleado='{5}', nit_sede='{6}',id_categoria='{7}' where id_producto = '{0}'";
-			sql = string.Format(sql, ob.Nombre_producto, ob.Precio_venta_producto, ob.Precio_compra_producto, ob.Fecha_ingreso_producto, ob.Id_empleado, ob.Nit_sede, ob.Id_categoria);
+			sql += "fecha_ingreso_producto='{4}', responsable_producto='{5}', nit_sede='{6}',id_categoria='{7}' where id_producto = '{0}'";
+			sql = string.Format(sql, ob.Nombre_producto, ob.Precio_venta_producto, ob.Precio_compra_producto, ob.Fecha_ingreso_producto.ToString("yyyy-MM-dd hh:mm:ss"), ob.Id_empleado, ob.Nit_sede, ob.Id_categoria);
 			ExecuteNonQuery(sql);
 		}
 

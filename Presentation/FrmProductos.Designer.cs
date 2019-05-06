@@ -160,6 +160,7 @@
 			this.btnEliminar.TabIndex = 76;
 			this.btnEliminar.Text = "Eliminar";
 			this.btnEliminar.UseVisualStyleBackColor = true;
+			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
 			// 
 			// btnActualizar
 			// 
@@ -170,6 +171,7 @@
 			this.btnActualizar.TabIndex = 75;
 			this.btnActualizar.Text = "Actualizar";
 			this.btnActualizar.UseVisualStyleBackColor = true;
+			this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
 			// 
 			// btnAgregar
 			// 
@@ -180,13 +182,14 @@
 			this.btnAgregar.TabIndex = 74;
 			this.btnAgregar.Text = "Agregar";
 			this.btnAgregar.UseVisualStyleBackColor = true;
+			this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
 			// 
 			// dgProductos
 			// 
 			this.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgProductos.Location = new System.Drawing.Point(55, 294);
+			this.dgProductos.Location = new System.Drawing.Point(30, 294);
 			this.dgProductos.Name = "dgProductos";
-			this.dgProductos.Size = new System.Drawing.Size(528, 168);
+			this.dgProductos.Size = new System.Drawing.Size(578, 168);
 			this.dgProductos.TabIndex = 73;
 			// 
 			// txtId
