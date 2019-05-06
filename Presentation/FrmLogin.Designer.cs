@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtNombreUsuario = new System.Windows.Forms.TextBox();
@@ -46,7 +45,6 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.White;
-			this.panel1.Controls.Add(this.linkLabel1);
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.txtPassword);
 			this.panel1.Controls.Add(this.txtNombreUsuario);
@@ -58,17 +56,6 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(350, 388);
 			this.panel1.TabIndex = 1;
-			// 
-			// linkLabel1
-			// 
-			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Location = new System.Drawing.Point(133, 345);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(75, 13);
-			this.linkLabel1.TabIndex = 7;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "registarse aqui";
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
 			// 
 			// label3
 			// 
@@ -177,6 +164,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

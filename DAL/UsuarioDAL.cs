@@ -38,8 +38,6 @@ namespace DAL
             return Loguear(sql);
         }
 
-
-
         public void Delete(string Id_usuario)
         {
             sql = "delete from Usuario where id_usuario ='{0}')";

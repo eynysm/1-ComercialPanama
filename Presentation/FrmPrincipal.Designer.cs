@@ -30,11 +30,12 @@
 		{
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panelcontenedor = new System.Windows.Forms.Panel();
+			this.btnUsuarios = new System.Windows.Forms.Button();
 			this.btnProductos = new System.Windows.Forms.Button();
 			this.btnCategorias = new System.Windows.Forms.Button();
 			this.btnEmpleados = new System.Windows.Forms.Button();
 			this.btnSede = new System.Windows.Forms.Button();
-			this.panelcontenedor = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -50,6 +51,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(234)))));
+			this.panel1.Controls.Add(this.btnUsuarios);
 			this.panel1.Controls.Add(this.btnProductos);
 			this.panel1.Controls.Add(this.btnCategorias);
 			this.panel1.Controls.Add(this.btnEmpleados);
@@ -59,6 +61,29 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(194, 537);
 			this.panel1.TabIndex = 70;
+			// 
+			// panelcontenedor
+			// 
+			this.panelcontenedor.Location = new System.Drawing.Point(194, 37);
+			this.panelcontenedor.Name = "panelcontenedor";
+			this.panelcontenedor.Size = new System.Drawing.Size(758, 500);
+			this.panelcontenedor.TabIndex = 72;
+			// 
+			// btnUsuarios
+			// 
+			this.btnUsuarios.FlatAppearance.BorderSize = 0;
+			this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+			this.btnUsuarios.Image = global::Presentation.Properties.Resources.employee;
+			this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnUsuarios.Location = new System.Drawing.Point(12, 377);
+			this.btnUsuarios.Name = "btnUsuarios";
+			this.btnUsuarios.Size = new System.Drawing.Size(194, 44);
+			this.btnUsuarios.TabIndex = 7;
+			this.btnUsuarios.Text = "Usuarios";
+			this.btnUsuarios.UseVisualStyleBackColor = true;
+			this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
 			// 
 			// btnProductos
 			// 
@@ -124,13 +149,6 @@
 			this.btnSede.UseVisualStyleBackColor = true;
 			this.btnSede.Click += new System.EventHandler(this.btnSede_Click);
 			// 
-			// panelcontenedor
-			// 
-			this.panelcontenedor.Location = new System.Drawing.Point(194, 37);
-			this.panelcontenedor.Name = "panelcontenedor";
-			this.panelcontenedor.Size = new System.Drawing.Size(758, 500);
-			this.panelcontenedor.TabIndex = 72;
-			// 
 			// FrmPrincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +174,6 @@
 		private System.Windows.Forms.Button btnEmpleados;
 		private System.Windows.Forms.Button btnSede;
 		private System.Windows.Forms.Panel panelcontenedor;
+		private System.Windows.Forms.Button btnUsuarios;
 	}
 }

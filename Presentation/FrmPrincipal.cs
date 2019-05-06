@@ -58,5 +58,10 @@ namespace Presentation
 		{
 			AbrirFormHija(new FrmProductos());
 		}
+
+		private void btnUsuarios_Click(object sender, EventArgs e)
+		{
+			AbrirFormHija(new FrmUsuario());
+		}
 	}
 }

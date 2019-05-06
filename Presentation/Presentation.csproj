@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\box.png" />
+    <None Include="Resources\employee.png" />
     <Content Include="Resources\icons8-male-user-96.png" />
     <Content Include="Resources\placeholder %281%29.png" />
     <Content Include="Resources\placeholder %282%29.png" />

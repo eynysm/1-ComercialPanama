@@ -76,11 +76,6 @@ namespace Presentation
 			}
 		}
 
-		private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			new FrmUsuario().Show();
-		}
-
 		private void FrmLogin_Load(object sender, EventArgs e)
 		{
 			try

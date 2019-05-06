@@ -13,14 +13,6 @@ namespace Presentation
         public string RutaFoto { get; set; }
 
 
-        private void FillEmpleado()
-        {
-            dgEmpleados.DataSource = ebll.GetAll();
-            dgEmpleados.Refresh(); ;
-
-
-        }
-
         private void FillGrid()
         {
             try

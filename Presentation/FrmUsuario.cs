@@ -10,18 +10,19 @@ namespace Presentation
     public partial class FrmUsuario : Form
     {
         private UsuarioBLL ubll;
+		private EmpleadoBLL ebll; 
         public string RutaFoto { get; set; }
 
 
-        private void FillUsuario()
-        {
-            dgUsuario.DataSource = ubll.GetAll();
-            dgUsuario.Refresh(); ;
+		private void Fillcombos()
+		{
+			cbxEmpleado.DataSource = ebll.GetAll();
+			cbxEmpleado.ValueMember = "Id_empleado";
+			cbxEmpleado.Refresh();
 
+		}
 
-        }
-
-        private void FillGrid()
+		private void FillGrid()
         {
             try
             {
@@ -37,13 +38,12 @@ namespace Presentation
         private void ClearText()
         {
             txtId.Text = "";
-            txtNombreUsuario.Text = "";
+			cbxEmpleado.Text = "";
+			txtNombreUsuario.Text = "";
             txtPassword.Text = "";
-            txtIdEmpleado.Text = "";
             txtConfirmarPassword.Text = "";
             txtCorreo.Text = "";
         }
-
 
 
         private void FillData(string x)
@@ -54,9 +54,9 @@ namespace Presentation
                 if (ob != null)
                 {
                     txtId.Text = ob.Id_usuario;
-                    txtNombreUsuario.Text = ob.Nombre_usuario;
-                    txtPassword.Text = ob.Password;
-                    txtIdEmpleado.Text = ob.Id_empleado;
+					cbxEmpleado.SelectedValue = ob.Id_empleado;
+					txtNombreUsuario.Text = ob.Nombre_usuario;
+                    txtPassword.Text = ob.Password;              
                     txtCorreo.Text = ob.Correo_usuario;
                 }
             }
@@ -65,24 +65,6 @@ namespace Presentation
 
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        //Convierte byte[] en image
-
-        public Image ByteToImage(byte[] byteArrayIn)
-        {
-
-            Image returnImage = null;
-            try
-            {
-                MemoryStream ms = new MemoryStream(byteArrayIn);
-                returnImage = Image.FromStream(ms);
-            }
-            catch
-            {
-                throw;
-            }
-            return returnImage;
         }
 
         private void Save()
@@ -97,7 +79,7 @@ namespace Presentation
                     {
 
                         ob.Id_usuario = txtId.Text;
-                        ob.Id_empleado = txtIdEmpleado.Text;
+                        ob.Id_empleado = cbxEmpleado.SelectedValue.ToString();
                         ob.Nombre_usuario = txtNombreUsuario.Text;
                         ob.Password = txtPassword.Text;
                         ob.Correo_usuario = txtCorreo.Text;
@@ -106,8 +88,6 @@ namespace Presentation
                     {
                         MessageBox.Show("Paswword Incorrectos") ;
                     }
-
-
 
                     ubll.Save(ob);
                     FillGrid();
@@ -141,7 +121,6 @@ namespace Presentation
         }
 
 
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Save();
@@ -161,20 +140,6 @@ namespace Presentation
         public FrmUsuario()
         {
             InitializeComponent();
-        }
-
-        private void FrmUsuarios_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                ubll = new UsuarioBLL();
-                FillGrid();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void dgUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -208,13 +173,20 @@ namespace Presentation
 			try
 			{
 				ubll = new UsuarioBLL();
+				ebll = new EmpleadoBLL(); 
 				FillGrid();
+				Fillcombos();
 			}
 			catch (Exception ex)
 			{
 
 				MessageBox.Show(ex.Message);
 			}
+		}
+
+		private void cbxEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
