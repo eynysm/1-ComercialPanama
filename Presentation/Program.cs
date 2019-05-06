@@ -16,7 +16,7 @@ namespace Presentation
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			FrmEmpleados frmLogin = new FrmEmpleados();
+			FrmLogin frmLogin = new FrmLogin();
 			frmLogin.FormClosed += FrmLogin_closed;
 			frmLogin.Show();
 			Application.Run();

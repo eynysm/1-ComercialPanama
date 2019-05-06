@@ -27,6 +27,9 @@ namespace BLL
 		public Empleado GetById_empleado(string Id_empleado)
 		{ return c.GetById_empleado(Id_empleado); }
 
+		public List<Empleado> GetByLikeId_empleado(string Id_empleado)
+		{ return c.GetByLikeId_empleado(Id_empleado); }
+
 		public void Save(Empleado ob)
 		{ c.Save(ob); }
 	}

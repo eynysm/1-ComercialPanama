@@ -96,7 +96,33 @@ namespace DAL
             return null;
         }
 
-        public void Save(Empleado ob)
+		public List<Empleado> GetByLikeId_empleado(string Id_empleado)
+		{
+			sql = "select * from Empleado where Id_empleado LIKE '%{0}%'";
+			sql = string.Format(sql, Id_empleado);
+			List<Empleado> ls = new List<Empleado>();
+			DataTable dt = new DataTable();
+			dt = ExecuteQuery(sql);
+			foreach (DataRow r in dt.Rows)
+			{
+				Empleado ob = new Empleado();
+				ob.Id_empleado = r[0].ToString();
+				ob.Nombre_empleado = r[1].ToString();
+				ob.Apellido_empleado = r[2].ToString();
+				ob.Direccion_empleado = r[3].ToString();
+				ob.Telefono_empleado = r[4].ToString();
+				ob.Genero_empleado = r[5].ToString();
+				ob.Fecha_ingreso_empleado = Convert.ToDateTime(r[6]);
+				ob.Foto_empleado = r[7].ToString();
+				ob.Correo_empleado = r[8].ToString();
+				ls.Add(ob);
+
+			}
+			return ls;
+		}
+
+
+		public void Save(Empleado ob)
         {
             if (GetById_empleado(ob.Id_empleado) != null)
                 Update(ob);

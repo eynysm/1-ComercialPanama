@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities; 
+using Entities;
 
 namespace DAL
 {
-	public class ProductoDAL:Conexion
+	public class ProductoDAL : Conexion
 	{
 		string sql = "";
 

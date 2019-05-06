@@ -212,7 +212,7 @@
 			this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnProductos.ForeColor = System.Drawing.Color.White;
-			this.btnProductos.Image = global::Presentation.Properties.Resources.box;
+			//this.btnProductos.Image = global::Presentation.Properties.Resources.box;
 			this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnProductos.Location = new System.Drawing.Point(12, 314);
 			this.btnProductos.Name = "btnProductos";
@@ -227,7 +227,7 @@
 			this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCategorias.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCategorias.ForeColor = System.Drawing.Color.White;
-			this.btnCategorias.Image = global::Presentation.Properties.Resources.price_tag;
+			//this.btnCategorias.Image = global::Presentation.Properties.Resources.price_tag;
 			this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnCategorias.Location = new System.Drawing.Point(12, 250);
 			this.btnCategorias.Name = "btnCategorias";
@@ -242,7 +242,7 @@
 			this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnEmpleados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEmpleados.ForeColor = System.Drawing.Color.White;
-			this.btnEmpleados.Image = global::Presentation.Properties.Resources.team__1_;
+			//this.btnEmpleados.Image = global::Presentation.Properties.Resources.team__1_;
 			this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnEmpleados.Location = new System.Drawing.Point(12, 184);
 			this.btnEmpleados.Name = "btnEmpleados";
@@ -257,7 +257,7 @@
 			this.btnSede.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSede.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSede.ForeColor = System.Drawing.Color.White;
-			this.btnSede.Image = global::Presentation.Properties.Resources.placeholder__3_;
+			//this.btnSede.Image = global::Presentation.Properties.Resources.placeholder__3_;
 			this.btnSede.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnSede.Location = new System.Drawing.Point(12, 118);
 			this.btnSede.Name = "btnSede";
