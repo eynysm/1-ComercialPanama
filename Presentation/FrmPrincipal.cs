@@ -12,13 +12,20 @@ namespace Presentation
 {
 	public partial class FrmPrincipal : Form
 	{
-		public FrmPrincipal()
+        private string user;
+
+        public FrmPrincipal()
 		{
 			InitializeComponent();
 		}
 
+        public FrmPrincipal(string user)
+        {
+            this.user = user;
+            InitializeComponent();
+        }
 
-		private void AbrirFormHija(object formhija)
+        private void AbrirFormHija(object formhija)
 		{
 			if (this.panelcontenedor.Controls.Count > 0)
 				this.panelcontenedor.Controls.RemoveAt(0);
@@ -51,7 +58,10 @@ namespace Presentation
 
 		private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
-
+            if (user=="admin")
+            {
+                btnUsuarios.Visible = true;
+            }
 		}
 
 		private void btnProductos_Click(object sender, EventArgs e)

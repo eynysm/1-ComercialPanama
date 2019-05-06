@@ -48,7 +48,7 @@ namespace Presentation
 						if (ubll.IsLoggedIn(user, pass))
 						{
 							MessageBox.Show($"Bienvenido {user}");
-							FrmPrincipal frm = new FrmPrincipal();
+							FrmPrincipal frm = new FrmPrincipal(user);
 							frm.Show();
 							this.Close();
 						}
