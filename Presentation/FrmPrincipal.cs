@@ -35,7 +35,7 @@ namespace Presentation
 
 		private void btnSede_Click(object sender, EventArgs e)
 		{
-
+			AbrirFormHija(new FrmSedes());
 		}
 
 		private void btnCategorias_Click(object sender, EventArgs e)
@@ -52,6 +52,11 @@ namespace Presentation
 		private void FrmPrincipal_Load(object sender, EventArgs e)
 		{
 
+		}
+
+		private void btnProductos_Click(object sender, EventArgs e)
+		{
+			AbrirFormHija(new FrmProductos());
 		}
 	}
 }

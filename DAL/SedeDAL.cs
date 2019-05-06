@@ -19,7 +19,7 @@ namespace DAL
 
 		public void Add(Sede ob)
 		{
-			sql = "insert into Sede (nit_sede, nombre_sede, direccion_sede, telefono_sede, id_empleado) values ('{0}','{1}','{2}','{3}','{4}')";
+			sql = "insert into Sede (nit_sede, nombre_sede, direccion_sede, telefono_sede, responsable_sede) values ('{0}','{1}','{2}','{3}','{4}')";
 			sql = string.Format(sql, ob.Nit_sede, ob.Nombre_sede, ob.Direccion_sede, ob.Telefono_sede, ob.Id_empleado);
 			ExecuteNonQuery(sql);
 		}
@@ -33,7 +33,7 @@ namespace DAL
 
 		public void Update(Sede ob)
 		{
-			sql = "insert into Sede (nombre_sede, direccion_sede, telefono_sede, id_empleado) values ('{1}','{2}','{3}','{4}')";
+			sql = "insert into Sede (nombre_sede, direccion_sede, telefono_sede, responsable_sede) values ('{1}','{2}','{3}','{4}')";
 			sql = string.Format(sql, ob.Nombre_sede, ob.Direccion_sede, ob.Telefono_sede, ob.Id_empleado);
 			ExecuteNonQuery(sql);
 		}
@@ -72,7 +72,6 @@ namespace DAL
 				ob.Direccion_sede = r[2].ToString();
 				ob.Telefono_sede = r[3].ToString();
 				ob.Id_empleado = r[4].ToString();
-
 				return ob;
 			}
 			return null;

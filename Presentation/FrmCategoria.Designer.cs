@@ -42,7 +42,7 @@
 			// btnEliminar
 			// 
 			this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEliminar.Location = new System.Drawing.Point(394, 136);
+			this.btnEliminar.Location = new System.Drawing.Point(373, 136);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(109, 40);
 			this.btnEliminar.TabIndex = 15;
@@ -53,7 +53,7 @@
 			// btnActualizar
 			// 
 			this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnActualizar.Location = new System.Drawing.Point(262, 136);
+			this.btnActualizar.Location = new System.Drawing.Point(241, 136);
 			this.btnActualizar.Name = "btnActualizar";
 			this.btnActualizar.Size = new System.Drawing.Size(109, 40);
 			this.btnActualizar.TabIndex = 14;
@@ -64,7 +64,7 @@
 			// btnAgregar
 			// 
 			this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAgregar.Location = new System.Drawing.Point(133, 136);
+			this.btnAgregar.Location = new System.Drawing.Point(112, 136);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(109, 40);
 			this.btnAgregar.TabIndex = 13;
@@ -74,7 +74,7 @@
 			// 
 			// txtId
 			// 
-			this.txtId.Location = new System.Drawing.Point(272, 35);
+			this.txtId.Location = new System.Drawing.Point(251, 35);
 			this.txtId.Name = "txtId";
 			this.txtId.Size = new System.Drawing.Size(136, 20);
 			this.txtId.TabIndex = 11;
@@ -84,7 +84,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(192, 83);
+			this.label2.Location = new System.Drawing.Point(171, 83);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(57, 17);
 			this.label2.TabIndex = 10;
@@ -94,7 +94,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(192, 42);
+			this.label1.Location = new System.Drawing.Point(171, 42);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(19, 17);
 			this.label1.TabIndex = 9;
@@ -102,7 +102,7 @@
 			// 
 			// txtNombre
 			// 
-			this.txtNombre.Location = new System.Drawing.Point(272, 80);
+			this.txtNombre.Location = new System.Drawing.Point(251, 80);
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(136, 20);
 			this.txtNombre.TabIndex = 16;
@@ -110,7 +110,7 @@
 			// dgSede
 			// 
 			this.dgSede.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgSede.Location = new System.Drawing.Point(133, 208);
+			this.dgSede.Location = new System.Drawing.Point(112, 208);
 			this.dgSede.Name = "dgSede";
 			this.dgSede.Size = new System.Drawing.Size(370, 151);
 			this.dgSede.TabIndex = 12;

@@ -22,10 +22,8 @@ namespace Presentation
 			InitializeComponent();
 		}
 
-		private SedeBLL sbll;
-		private EmpleadoBLL ebll;
-		private CategoriaBLL cbll;
 		private ProductoBLL pbll;
+
 
 		private void FillGrid()
 		{
